@@ -1,0 +1,16 @@
+name: GitHub Actions CI Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Run test script
+      run: |
+        chmod +x test_gcd.sh gcd.sh
+        ./test_gcd.sh
